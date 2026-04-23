@@ -1,0 +1,692 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>STALCRINGE: X - анти-гайд по добровольной боли</title>
+    <meta
+      name="description"
+      content="Сатирический анти-лендинг о том, почему STALCRAFT: X может превратить вечер в смену на заводе аномалий."
+    >
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;900&family=JetBrains+Mono:wght@500;700&display=swap"
+      rel="stylesheet"
+    >
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <canvas id="zone-canvas" aria-hidden="true"></canvas>
+
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="STALCRINGE X">
+        <span class="brand-mark">SX</span>
+        <span>STALCRINGE: X</span>
+      </a>
+      <nav class="nav" aria-label="Основная навигация">
+        <a href="#symptoms">Симптомы</a>
+        <a href="#players">Типы</a>
+        <a href="#session">Сессия</a>
+        <a href="#rating">Антирейтинг</a>
+        <a href="#map">Карта</a>
+        <a href="#reviews">Отзывы</a>
+        <a href="#knowledge">База</a>
+        <a href="#forum">Форум</a>
+        <a href="#patch-detector">Детектор</a>
+        <a href="#museum">Музей</a>
+        <a href="#contract">Контракт</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">Пародийный анти-сайт для тех, кто почти нажал “играть” и еще мог спастись</p>
+          <h1 id="hero-title">Сталкер в майнкрафте, но боль скачалась первой.</h1>
+          <p class="hero-lead">
+            STALCRAFT: X выглядит как кубический поход в Зону, а ощущается как
+            налоговая декларация на нервах: гринд, внезапные крысы с прицелом,
+            экономика “сам виноват” и вечная надежда, что после следующего апгрейда
+            эта херня наконец начнет уважать ваше время.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#calculator">Посчитать моральный урон</a>
+            <a class="button ghost" href="#symptoms">Посмотреть диагноз</a>
+            <button class="button danger" id="emission-trigger" type="button">Активировать выброс</button>
+          </div>
+          <div class="emission-countdown" aria-live="polite">
+            <span class="signal-label">Выброс по расписанию</span>
+            <strong id="emission-countdown">00:17</strong>
+            <p id="emission-status">Фон зоны выключен. Даже эфир понял, что надо дать вам передохнуть.</p>
+            <div class="countdown-actions">
+              <button class="button ghost" id="countdown-start" type="button">Запустить отсчет</button>
+              <button class="button ghost" id="countdown-reset" type="button">Сброс</button>
+              <button class="button ghost" id="ambient-toggle" type="button">Включить фон зоны</button>
+            </div>
+          </div>
+        </div>
+
+        <aside class="signal-panel" aria-label="Показатели зоны">
+          <div>
+            <span class="signal-label">Режим</span>
+            <strong>Free-to-cope, pay-with-time</strong>
+          </div>
+          <div>
+            <span class="signal-label">Жанр</span>
+            <strong>MMO + FPS + “ну еще один рейд”</strong>
+          </div>
+          <div>
+            <span class="signal-label">Риск</span>
+            <strong>Потерять вечер, лут и последние теплые чувства к балансу</strong>
+          </div>
+        </aside>
+        <div class="hero-warning" aria-hidden="true">
+          <span>Mixed reviews</span>
+          <strong>65%</strong>
+          <small>positive за последние 30 дней в Steam</small>
+        </div>
+      </section>
+
+      <section class="ticker" aria-label="Бегущая строка">
+        <div>
+          <span>аномалия: ожидания</span>
+          <span>артефакт: свободное время</span>
+          <span>мутант: прогрессия</span>
+          <span>радиация: чат</span>
+          <span>выброс: патчноут</span>
+          <span>детектор: терпение</span>
+        </div>
+      </section>
+
+      <section class="section intro">
+        <div class="section-kicker">Что это вообще такое</div>
+        <div class="split">
+          <h2>Официально: открытый мир, мутанты, аномалии, PvP/PvE и прогрессия через снаряжение.</h2>
+          <p>
+            По ощущениям критика с дивана: симулятор “я сейчас быстро нафармлю”
+            с внезапной проверкой нервной системы. В игре есть сильные стороны:
+            атмосфера, идея, сеттинг и редкий гибрид MMOFPS. Именно поэтому
+            особенно смешно, когда все это превращается в марафон терпения.
+          </p>
+        </div>
+      </section>
+
+      <section class="section patch-section" id="patch" aria-labelledby="patch-title">
+        <div class="section-kicker">Патчноут выброса</div>
+        <div class="patch-layout">
+          <div>
+            <h2 id="patch-title">Обновление, после которого игра снова объясняет, что счастье было багом.</h2>
+            <p>
+              Фейковый патчноут здорового хейта: без баланса, но с честной интонацией человека, который
+              открыл список изменений и почувствовал запах очередного вечера в мусорку.
+            </p>
+          </div>
+          <div class="patch-console" aria-label="Пародийный патчноут">
+            <article class="patch-item">
+              <span>01</span>
+              <h3>Снижено удовольствие от игры на 12%</h3>
+              <p>Система посчитала, что игроки слишком часто улыбались в первые 20 минут.</p>
+            </article>
+            <article class="patch-item">
+              <span>02</span>
+              <h3>Увеличен шанс умереть непонятно откуда</h3>
+              <p>Теперь источник унижения еще лучше сливается с окружением и вашей самооценкой.</p>
+            </article>
+            <article class="patch-item">
+              <span>03</span>
+              <h3>Исправлена ошибка, из-за которой прогресс ощущался прогрессом</h3>
+              <p>Игрок возвращен в проектное состояние: много действий, мало радости, все по ТЗ.</p>
+            </article>
+            <article class="patch-item">
+              <span>04</span>
+              <h3>Повышена плотность фразы “ну это же PvP”</h3>
+              <p>Обоснование боли теперь выпадает чаще и громче, особенно после потери лута.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="hate-manifest" aria-labelledby="manifest-title">
+        <div class="manifest-copy">
+          <div class="section-kicker">Личный вердикт</div>
+          <h2 id="manifest-title">Это не игра. Это кубический испытательный стенд для вашего терпения.</h2>
+          <p>
+            Если коротко: идея кайфовая, атмосфера цепляет, а потом игра достает
+            канцелярский нож и начинает резать вечер на куски: час на фарм, час на
+            дорогу, пять секунд на смерть, десять минут на “да что за говно сейчас было”.
+          </p>
+          <div class="manifest-pills" aria-label="Главные обвинения">
+            <span>гринд вместо контента</span>
+            <span>PvP как коммунальный платеж</span>
+            <span>баланс на больничном</span>
+            <span>лут уходит в чужой рюкзак</span>
+          </div>
+        </div>
+        <div class="manifest-art" role="img" aria-label="Кубический бункер с лутом и сломанной клавиатурой"></div>
+      </section>
+
+      <section class="section" id="symptoms" aria-labelledby="symptoms-title">
+        <div class="section-kicker">Почему не стоит играть</div>
+        <h2 id="symptoms-title">Восемь признаков, что игра уже жует ваш вечер и просит добавки.</h2>
+        <div class="cards">
+          <article class="card">
+            <span class="card-number">01</span>
+            <h3>Гринд маскируется под приключение</h3>
+            <p>Сначала вы исследователь. Через час вы бухгалтер ресурсов с автоматом, кислым лицом и ощущением, что вас наняли бесплатно.</p>
+          </article>
+          <article class="card">
+            <span class="card-number">02</span>
+            <h3>PvP приходит без приглашения</h3>
+            <p>Вы вышли за артефактом, а вернулись с пустым рюкзаком и новым знанием: чужой прицел быстрее вашей мечты и вашей реакции.</p>
+          </article>
+          <article class="card">
+            <span class="card-number">03</span>
+            <h3>Баланс как городская легенда</h3>
+            <p>Все слышали, что он где-то есть. Возможно, лежит в аномалии рядом с уважением к новичкам.</p>
+          </article>
+          <article class="card">
+            <span class="card-number">04</span>
+            <h3>Free-to-play с ароматом “ценим ваше время”</h3>
+            <p>Деньги не обязательны. Просто ваше время превращается в расходник, который игра жрет с аппетитом промышленного станка.</p>
+          </article>
+          <article class="card">
+            <span class="card-number">05</span>
+            <h3>Чат лечит от романтики сеттинга</h3>
+            <p>Пять минут общения, и мутанты начинают казаться самой адекватной фракцией в радиусе километра.</p>
+          </article>
+          <article class="card">
+            <span class="card-number">06</span>
+            <h3>Лут делает вид, что любит вас</h3>
+            <p>Он улыбается издалека, но уходит к человеку, который держал угол с философией “ничего личного”.</p>
+          </article>
+          <article class="card">
+            <span class="card-number">07</span>
+            <h3>Патчи меняют погоду в голове</h3>
+            <p>Сегодня ваша сборка нормальная. Завтра она музейный экспонат с табличкой “когда-то работало”.</p>
+          </article>
+          <article class="card card-danger">
+            <span class="card-number">08</span>
+            <h3>Эндгейм требует не скилл, а прописку</h3>
+            <p>В какой-то момент игра перестает спрашивать “умеешь ли ты играть” и начинает спрашивать “ты вообще выходишь из клиента, слабак?”.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="roast-band" aria-labelledby="trailer-title">
+        <div class="roast-copy">
+          <div class="section-kicker">Честный трейлер</div>
+          <h2 id="trailer-title">“Уникальные эмоции гарантированы”. Особенно плохие.</h2>
+          <p>
+            Да, эмоции будут: отрицание, торг, принятие, повторная установка,
+            удаление, чтение форума, возвращение, снова отрицание и тихий вопрос:
+            зачем я добровольно пришел работать в кубический ад?
+          </p>
+        </div>
+        <div class="mock-terminal" aria-label="Пародийный системный лог">
+          <p><span>ZONE://</span> загрузка надежды...</p>
+          <p><span>WARNING</span> обнаружен игрок из другой фракции</p>
+          <p><span>DROP</span> ресурсы покинули чат, игрок покинул реальность</p>
+          <p><span>PATCH</span> ваша мета больше не с вами, соболезнуем</p>
+          <p><span>OK</span> пользователь нажал “еще рейд”, диагноз подтвержден</p>
+        </div>
+      </section>
+
+      <section class="section session-section" id="session" aria-labelledby="session-title">
+        <div class="session-copy">
+          <div class="section-kicker">Симулятор типичной сессии</div>
+          <h2 id="session-title">Нажмите “зайти на 20 минут” и посмотрите, как вечер превращается в фарш.</h2>
+          <p>
+            Это мини-реконструкция классического сценария: вы клянетесь себе,
+            что быстро заберете пару ресурсов, а потом внезапно обсуждаете баланс
+            с потолком в три часа ночи.
+          </p>
+          <div class="session-actions">
+            <button class="button primary" id="session-start" type="button">Зайти на 20 минут</button>
+            <button class="button ghost" id="session-reset" type="button">Стереть позор</button>
+          </div>
+        </div>
+        <div class="session-console" aria-live="polite">
+          <div class="console-top">
+            <span>SESSION.LOG</span>
+            <strong id="session-clock">00:00</strong>
+          </div>
+          <ol id="session-log">
+            <li>Готовность: пользователь еще верит в счастливый исход.</li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="section intercept-section" id="intercept" aria-labelledby="intercept-title">
+        <div class="section-kicker">Радиоперехват</div>
+        <div class="intercept-layout">
+          <div>
+            <h2 id="intercept-title">Эфир Зоны передает примерно то же, что и ваше лицо после рейда.</h2>
+            <p>
+              Нажимайте кнопку и ловите очередную передачу с частоты, где баланс уже давно не отвечает,
+              а здравый смысл просит сменить канал и заняться чем-то человеческим.
+            </p>
+            <div class="session-actions">
+              <button class="button primary" id="intercept-button" type="button">Поймать сигнал</button>
+            </div>
+          </div>
+          <div class="intercept-console" aria-live="polite">
+            <span class="signal-label">Частота / 113.7 МГц</span>
+            <strong id="intercept-line">“Прием... баланс не отвечает. Повторяю: баланс не отвечает.”</strong>
+            <p id="intercept-meta">Статус: эфир слегка трещит, но по настроению все очень понятно.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section rating-section" id="rating" aria-labelledby="rating-title">
+        <div class="section-kicker">Антирейтинг механик</div>
+        <h2 id="rating-title">Оценка боли по шкале “зачем я это терплю”.</h2>
+        <div class="rating-grid">
+          <article class="rating-card">
+            <span>10/10</span>
+            <h3>Гринд</h3>
+            <p>Не контент, а производственная практика без зарплаты и с шансом потерять сменную обувь.</p>
+            <div class="meter"><i style="width: 100%"></i></div>
+          </article>
+          <article class="rating-card">
+            <span>9/10</span>
+            <h3>PvP из-за угла</h3>
+            <p>Лучший способ понять, что ваша экипировка была временной арендой у случайного человека.</p>
+            <div class="meter"><i style="width: 90%"></i></div>
+          </article>
+          <article class="rating-card">
+            <span>8/10</span>
+            <h3>Экономика</h3>
+            <p>Продал душу, почку и три вечера. До апгрейда все равно не хватило, но спасибо за участие.</p>
+            <div class="meter"><i style="width: 82%"></i></div>
+          </article>
+          <article class="rating-card">
+            <span>11/10</span>
+            <h3>Эндгейм</h3>
+            <p>Система вежливо интересуется: “А личная жизнь у вас точно не используется?”</p>
+            <div class="meter overflow"><i style="width: 100%"></i></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section save-section" id="save" aria-labelledby="save-title">
+        <div>
+          <div class="section-kicker">Фейковая кнопка скачать</div>
+          <h2 id="save-title">Сайт пытается спасти вас от установки.</h2>
+          <p>
+            Наведите курсор на кнопку. Она знает, чем это закончится, и у нее
+            инстинкт самосохранения развит лучше, чем у игрока после вайпа лута.
+          </p>
+        </div>
+        <div class="runaway-zone">
+          <span class="runaway-label">Зона удержания кнопки</span>
+          <button class="download-bait" id="download-bait" type="button">Скачать STALCRINGE</button>
+          <p id="save-message">Кнопка пока делает вид, что доверяет вашим решениям.</p>
+        </div>
+      </section>
+
+      <section class="section player-section" id="players" aria-labelledby="players-title">
+        <div class="section-kicker">Тип игрока</div>
+        <div class="player-layout">
+          <div>
+            <h2 id="players-title">Выберите стадию поражения Зоной.</h2>
+            <p>
+              Каждый тип игрока думает, что он особенный. Сайт вежливо объясняет,
+              какая именно форма самобмана сейчас запущена.
+            </p>
+            <div class="player-tabs" role="tablist" aria-label="Типы игроков">
+              <button class="player-tab is-active" type="button" data-player="newbie">Новичок</button>
+              <button class="player-tab" type="button" data-player="farmer">Фармила</button>
+              <button class="player-tab" type="button" data-player="pvp">PvP-псих</button>
+              <button class="player-tab" type="button" data-player="returner">Вернувшийся</button>
+              <button class="player-tab" type="button" data-player="timepayer">Донатер времени</button>
+            </div>
+          </div>
+          <article class="player-diagnosis" id="player-diagnosis" aria-live="polite">
+            <span>Новичок</span>
+            <h3>Думает, что умер случайно.</h3>
+            <p>Еще не знает, что это был не баг, а приветственный пакет: пустой рюкзак, экран смерти и первое “ну бывает”.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section excuse-section" aria-labelledby="excuse-title">
+        <div>
+          <div class="section-kicker">Генератор оправданий</div>
+          <h2 id="excuse-title">Почему я опять зашел?</h2>
+          <p>
+            Нажмите кнопку и получите готовое объяснение для себя, друзей и
+            внутреннего прокурора, который спрашивает, куда делись три часа.
+          </p>
+        </div>
+        <div class="excuse-machine">
+          <p id="excuse-output">“Я просто хотел проверить патч.”</p>
+          <button class="button primary" id="excuse-button" type="button">Сгенерировать отмазку</button>
+        </div>
+      </section>
+
+      <section class="section descent-section" aria-labelledby="descent-title">
+        <div class="section-kicker">Путь деградации игрока</div>
+        <h2 id="descent-title">От “прикольный сеттинг” до “я удаляю, но не сегодня”.</h2>
+        <ol class="descent-timeline">
+          <li><span>01</span><strong>Интерес</strong><p>О, кубическая Зона, мутанты, аномалии, может быть атмосферно.</p></li>
+          <li><span>02</span><strong>Атмосфера</strong><p>Первые часы реально цепляют. Вы еще улыбаетесь. Это пройдет.</p></li>
+          <li><span>03</span><strong>Гринд</strong><p>Игра достает таблицу ресурсов и говорит: “Ну что, работаем?”</p></li>
+          <li><span>04</span><strong>Угол</strong><p>Невидимый философ держит прострел и объясняет вам устройство собственности через потерю лута.</p></li>
+          <li><span>05</span><strong>Форум</strong><p>Вы читаете чужие страдания и понимаете, что это не баг, это культура.</p></li>
+          <li><span>06</span><strong>Удаление</strong><p>Священный ритуал очищения диска, обычно временный.</p></li>
+          <li><span>07</span><strong>Возвращение</strong><p>Через три дня: “Ну я просто проверю, стало ли лучше”. Не стало.</p></li>
+        </ol>
+      </section>
+
+      <section class="section compare-section" aria-labelledby="compare-title">
+        <div class="section-kicker">Ожидание / Реальность</div>
+        <h2 id="compare-title">Маркетинг зовет в приключение. Игра выдает табель учета боли.</h2>
+        <div class="compare-grid">
+          <article>
+            <span>Ожидание</span>
+            <h3>Пойду исследовать опасную Зону.</h3>
+            <p>Буду осторожно пробираться через аномалии, искать артефакты и чувствовать себя легендой.</p>
+          </article>
+          <article>
+            <span>Реальность</span>
+            <h3>Несу мусор 1200 метров и умираю за 0.4 секунды.</h3>
+            <p>Артефакт найден, настроение потеряно, рюкзак перешел на сторону экономики чужих прострелов.</p>
+          </article>
+          <article>
+            <span>Ожидание</span>
+            <h3>Будет суровый, честный PvP.</h3>
+            <p>Позиционка, скилл, умные решения, красивый обмен выстрелами.</p>
+          </article>
+          <article>
+            <span>Реальность</span>
+            <h3>Экран смерти быстрее, чем мысль “а откуда?”.</h3>
+            <p>Вы даже не поняли, кто вас убил, зато поняли, что пора пить воду и смотреть в окно.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section pain-map-section" id="map" aria-labelledby="map-title">
+        <div class="section-kicker">Карта боли</div>
+        <div class="pain-map-layout">
+          <div>
+            <h2 id="map-title">Навигация по местам, где умирает надежда.</h2>
+            <p>
+              Фанатская псевдо-карта, на которой отмечены главные биомы внутреннего
+              раздражения. Нажмите на точку, чтобы получить локальный диагноз.
+            </p>
+          </div>
+          <div class="pain-map" aria-label="Псевдо-карта боли">
+            <button style="--x: 18%; --y: 62%" data-place="Болото гринда" data-desc="Здесь игрок перестает быть человеком и становится маршрутом между ресурсами." type="button">01</button>
+            <button style="--x: 42%; --y: 36%" data-place="Угол внезапной смерти" data-desc="Священное место, где чужой прицел появляется раньше вашего понимания ситуации." type="button">02</button>
+            <button style="--x: 66%; --y: 48%" data-place="Завод нерфов" data-desc="Вчера ваша сборка работала. Сегодня она музейный экспонат с грустной табличкой." type="button">03</button>
+            <button style="--x: 74%; --y: 56%" data-place="Свалка надежд" data-desc="Сюда складывают обещания 'после апгрейда заживет' и другие опасные материалы." type="button">04</button>
+            <button style="--x: 30%; --y: 24%" data-place="База форумных экспертов" data-desc="Территория, где любой разговор заканчивается словами 'ты просто не понял игру'." type="button">05</button>
+            <div class="map-diagnosis" id="map-diagnosis">
+              <span>Выберите точку</span>
+              <strong>Карта молчит, но осуждает.</strong>
+              <p>Нажмите на любой маркер, чтобы открыть локальную аномалию.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section review-section" id="reviews" aria-labelledby="reviews-title">
+        <div class="section-kicker">Глас народа, слегка обугленный</div>
+        <div class="review-head">
+          <h2 id="reviews-title">Реальные жалобы игроков, переведенные с человеческого на сайтный.</h2>
+          <p>
+            Это не дословная стена копипасты, а выжимка повторяющихся мотивов из Steam Community,
+            Reddit и обзорных агрегаторов: гринд, принудительное PvP, перекос прогрессии,
+            нерфы, усталость от эндгейма и ощущение, что игра любит ваше время сильнее, чем вас.
+          </p>
+        </div>
+        <div class="review-grid">
+          <article class="review-card">
+            <span>Steam Community</span>
+            <h3>“Нужна вторая жизнь, чтобы гриндить”</h3>
+            <p>
+              Короткая формула боли: игроки прямо жалуются, что прогрессия съедает слишком много времени.
+              В переводе: вы заходите пострелять, а выходите с табличкой учета смен.
+            </p>
+            <a href="https://steamcommunity.com/app/1818450/reviews/">Источник</a>
+          </article>
+          <article class="review-card">
+            <span>Reddit</span>
+            <h3>Открытый PvP как налог на существование</h3>
+            <p>
+              В обсуждениях регулярно всплывает тема: квесты, фарм и недельные активности легко
+              превращаются в обязательную встречу с теми, кто пришел не играть с вами, а играть по вам.
+            </p>
+            <a href="https://www.reddit.com/r/Stalcraft/comments/1ropcd7/anyone_else_think_a_pve_mode_would_be_a_good_idea/">Источник</a>
+          </article>
+          <article class="review-card">
+            <span>Reddit</span>
+            <h3>Матчмейкинг: “200 часов против 1500”</h3>
+            <p>
+              Частая боль комьюнити: ощущение, что новичок и ветеран встречаются слишком рано,
+              а результат известен еще до первого выстрела. Очень удобно, если вы любите экран смерти.
+            </p>
+            <a href="https://www.reddit.com/r/Stalcraft/comments/1sisex8/exbo_are_destroying_stalcraftx/">Источник</a>
+          </article>
+          <article class="review-card">
+            <span>MMOBomb</span>
+            <h3>Pay-for-time, но по-русски: “терпи или ускоряйся”</h3>
+            <p>
+              Обзорные страницы описывают модель как free-to-play с магазином и ускорением отдельных
+              зон прокачки. Сайтный перевод: игра не просит кошелек сразу, она сначала берет расписание.
+            </p>
+            <a href="https://www.mmobomb.com/review/stalcraft-x">Источник</a>
+          </article>
+          <article class="review-card">
+            <span>Steam</span>
+            <h3>Mixed - это не жанр, но почти диагноз</h3>
+            <p>
+              На Steam у игры смешанные свежие отзывы: примерно две трети положительных за последние
+              30 дней. Для страницы “не играй” это звучит как сирена с человеческим лицом.
+            </p>
+            <a href="https://store.steampowered.com/app/1818450/STALCRAFT/">Источник</a>
+          </article>
+          <article class="review-card">
+            <span>Reddit</span>
+            <h3>“Нужен PvE” против “PvP - основа игры”</h3>
+            <p>
+              Комьюнити спорит не о косметике, а о самой ДНК проекта: кто-то хочет спокойный PvE-мир,
+              другие отвечают, что постоянная угроза и есть смысл. Итог: спор вечный, нервов конечное число.
+            </p>
+            <a href="https://www.reddit.com/r/Stalcraft/comments/1roscnp/this_game_is_great_overall_but_the_pvp_leaves_a/">Источник</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="section calculator-section" id="calculator" aria-labelledby="calculator-title">
+        <div class="section-kicker">Калькулятор</div>
+        <div class="calculator-layout">
+          <div>
+            <h2 id="calculator-title">Сколько нервов сожрет “одна короткая сессия”?</h2>
+            <p>
+              Сатирическая математика без претензии на науку. Зато честнее фразы
+              “я зайду на двадцать минут” и других красивых сказок для взрослых.
+            </p>
+          </div>
+          <form class="calculator" id="salt-form">
+            <label>
+              Часов в неделю
+              <input id="hours" type="range" min="1" max="60" value="12">
+              <output id="hours-out" for="hours">12</output>
+            </label>
+            <label>
+              Смертей из-за угла
+              <input id="ambushes" type="range" min="0" max="40" value="9">
+              <output id="ambushes-out" for="ambushes">9</output>
+            </label>
+            <label>
+              Вера в баланс
+              <input id="faith" type="range" min="0" max="100" value="35">
+              <output id="faith-out" for="faith">35%</output>
+            </label>
+            <div class="result" aria-live="polite">
+              <span>Индекс солевого выброса</span>
+              <strong id="salt-score">86</strong>
+              <p id="salt-verdict">Высокий риск написать тред на 14 абзацев.</p>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <section class="section knowledge-section" id="knowledge" aria-labelledby="knowledge-title">
+        <div class="section-kicker">База знаний</div>
+        <h2 id="knowledge-title">Учебник выживания для тех, кто еще думает, что это игра.</h2>
+        <div class="knowledge-grid">
+          <article>
+            <span>01 / Лут</span>
+            <h3>Как потерять рюкзак за четыре секунды</h3>
+            <p>Выйти из укрытия, услышать один подозрительный пиксель, повернуться не туда и подарить экономике свежий вклад.</p>
+          </article>
+          <article>
+            <span>02 / Баланс</span>
+            <h3>Почему это не баг, а атмосфера</h3>
+            <p>Если боль повторяется стабильно, она получает статус механики и место в патчноуте между оптимизацией и надеждой.</p>
+          </article>
+          <article>
+            <span>03 / Возврат</span>
+            <h3>Как скачать игру обратно без свидетелей</h3>
+            <p>Сначала сказать “просто посмотрю новости”, потом открыть лаунчер, потом внезапно оказаться в рейде на три часа.</p>
+          </article>
+          <article>
+            <span>04 / Словарь</span>
+            <h3>Краткий перевод языка Зоны</h3>
+            <p>“Немного фарма” значит вечер. “Честное PvP” значит чужой угол. “Починили баланс” значит проверьте завещание сборки.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section forum-section" id="forum" aria-labelledby="forum-title">
+        <div class="section-kicker">Симулятор форума</div>
+        <h2 id="forum-title">Откройте тред и посмотрите, как аргументы превращаются в радиацию.</h2>
+        <div class="forum-board">
+          <article class="forum-thread">
+            <button type="button" data-thread="balance">
+              <span>HOT / 148 ответов</span>
+              <strong>Баланс опять ушел в аномалию?</strong>
+            </button>
+            <p class="thread-replies" id="thread-balance">Автор принес цифры. В ответ получил “ты просто не понял игру”, “смени сборку” и ссылку на патчноут, который сделал хуже.</p>
+          </article>
+          <article class="forum-thread">
+            <button type="button" data-thread="loot">
+              <span>DROP / 92 ответа</span>
+              <strong>Лут исчез быстрее, чем мотивация</strong>
+            </button>
+            <p class="thread-replies" id="thread-loot">Первые пять ответов сочувствуют. Шестой объясняет, что так и надо. Седьмой уже спорит с шестым о смысле жизни.</p>
+          </article>
+          <article class="forum-thread">
+            <button type="button" data-thread="return">
+              <span>CLASSIC / 300 часов</span>
+              <strong>Удалил навсегда, когда возвращаться?</strong>
+            </button>
+            <p class="thread-replies" id="thread-return">Консенсус форума: завтра. Максимум послезавтра, если человек очень сильный и спрятал ярлык.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section patch-detector-section" id="patch-detector" aria-labelledby="patch-detector-title">
+        <div class="section-kicker">Детектор патча</div>
+        <div class="patch-detector">
+          <div>
+            <h2 id="patch-detector-title">Вставьте фразу из патчноута, а сайт переведет ее на человеческий.</h2>
+            <p>Работает даже без нейросети: достаточно боли, опыта и легкого недоверия к слову “оптимизация”.</p>
+          </div>
+          <div class="detector-panel">
+            <label for="patch-input">Фраза разработчика</label>
+            <input id="patch-input" type="text" value="Оптимизирована экономика" placeholder="Выберите фразу ниже или напишите свою">
+            <div class="patch-presets" aria-label="Готовые фразы патчноута">
+              <button type="button" data-patch="Оптимизирована экономика">Экономика</button>
+              <button type="button" data-patch="Переработан баланс оружия">Баланс</button>
+              <button type="button" data-patch="Улучшен PvP-опыт">PvP</button>
+              <button type="button" data-patch="Повышена производительность">Оптимизация</button>
+              <button type="button" data-patch="Обновлены квесты и задания">Квесты</button>
+              <button type="button" id="patch-random">Случайная фраза</button>
+            </div>
+            <button class="button primary" id="patch-translate" type="button">Перевести</button>
+            <output id="patch-output">Фармить стало дольше, но теперь это называется долгосрочной прогрессией.</output>
+          </div>
+        </div>
+      </section>
+
+      <section class="section museum-section" id="museum" aria-labelledby="museum-title">
+        <div class="section-kicker">Музей удалений</div>
+        <h2 id="museum-title">Экспозиция “я удалил игру навсегда”, обновляется каждую неделю.</h2>
+        <ol class="museum-timeline">
+          <li><span>День 1</span><strong>Удаление</strong><p>Игрок торжественно освобождает диск и чувствует себя человеком с будущим.</p></li>
+          <li><span>День 2</span><strong>Патчноут</strong><p>В заголовке обещают улучшения. Внутренний голос просит не верить, но его уже заглушает интерес.</p></li>
+          <li><span>День 3</span><strong>Лаунчер</strong><p>“Просто проверю, стало ли хуже” превращается в загрузку файлов и переговоры с совестью.</p></li>
+          <li><span>День 4</span><strong>Возвращение</strong><p>Рюкзак снова пуст, вечер снова занят, музей получает новый экспонат.</p></li>
+        </ol>
+      </section>
+
+      <section class="section contract-section" id="contract" aria-labelledby="contract-title">
+        <div class="contract-card">
+          <div>
+            <div class="section-kicker">Контракт с Зоной</div>
+            <h2 id="contract-title">Добровольное соглашение о передаче вечера в неизвестном направлении.</h2>
+          </div>
+          <ul>
+            <li>Я понимаю, что лут временный, а обида на баланс может храниться дольше некоторых отношений.</li>
+            <li>Я добровольно отдаю “один короткий заход” и не буду удивляться, если он станет сменой.</li>
+            <li>Я признаю, что фраза “после апгрейда заживет” является опасным материалом.</li>
+          </ul>
+          <button class="button danger" id="contract-sign" type="button">Подписать кровью</button>
+          <p id="contract-result" aria-live="polite">Контракт пока лежит на столе и делает вид, что у вас есть выбор.</p>
+        </div>
+      </section>
+
+      <section class="section" id="faq" aria-labelledby="faq-title">
+        <div class="section-kicker">FAQ</div>
+        <h2 id="faq-title">Вопросы, которые задает человек перед ошибкой на 300 часов.</h2>
+        <div class="faq-list">
+          <details>
+            <summary>Это объективный обзор?</summary>
+            <p>Нет. Это пародия и субъективный roast. Факты про жанр и модель взяты из публичных описаний, выводы тут нарочно язвительные.</p>
+          </details>
+          <details>
+            <summary>Игра совсем плохая?</summary>
+            <p>Нет, и от этого смешнее. Идея сильная, атмосфера есть, но местами оно ощущается так, будто отличный сеттинг засунули в мясорубку гринда и сказали “приятного аппетита”.</p>
+          </details>
+          <details>
+            <summary>Можно ли сделать жестче?</summary>
+            <p>Можно. Но лучше бить по механикам, гринду, балансу и пользовательскому опыту, а не по людям, которые игру делают или любят.</p>
+          </details>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>
+        STALCRINGE: X - фанатская сатирическая страница. Не аффилировано с EXBO
+        или STALCRAFT: X.
+      </p>
+      <p>
+        Источники для фактов:
+        <a href="https://store.steampowered.com/app/1818450/STALCRAFT_X/">Steam</a>,
+        <a href="https://www.gematsu.com/games/stalcraft-x">Gematsu</a>,
+        <a href="https://steamcommunity.com/app/1818450/reviews/">Steam Community</a>,
+        <a href="https://www.mmobomb.com/review/stalcraft-x">MMOBomb</a>,
+        <a href="https://www.reddit.com/r/Stalcraft/">Reddit</a>.
+      </p>
+    </footer>
+
+    <div class="rescue-modal" id="rescue-modal" role="dialog" aria-modal="true" aria-labelledby="rescue-title">
+      <div class="rescue-dialog">
+        <div class="section-kicker">Поздравляем</div>
+        <h2 id="rescue-title">Вы сохранили 300 часов жизни.</h2>
+        <p>
+          Установка отменена. Лут не потерян, вечер не сожран, клавиатура пока
+          не летит в стену. Редкий хороший финал в этой Зоне.
+        </p>
+        <button class="button primary" id="rescue-close" type="button">Принять спасение</button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
